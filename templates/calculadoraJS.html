@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../static/js/app.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="w-50" style="margin: 0 auto">
+        <h1 class="bg-dark text-white text-center">Calculadora</h1>
+        <form method="post" id="frmCalculadora">
+          <div>
+            <label for="txtNum1" class="fw-bold">Numero 1</label>
+            <input
+              type="number"
+              name="txtNum1"
+              id="txtNum1"
+              class="form-control"
+              required
+              value="{% if datos %}{{datos[0]}}{% endif %}"
+            />
+          </div>
+          <div>
+            <label for="txtNum2" class="fw-bold">Numero 2</label>
+            <input
+              type="number"
+              name="txtNum2"
+              id="txtNum2"
+              class="form-control"
+              required
+              value="{% if datos %}{{datos[1]}}{% endif %}"
+            />
+          </div>
+          <div>
+            <label for="txtResultado" class="fw-bold">Resultado</label>
+            <input
+              type="number"
+              name="txtResultado"
+              id="txtResultado"
+              class="form-control"
+              value="{% if datos %}{{datos[2]}}{% endif %}"
+              readonly
+            />
+          </div>
+          <br />
+          <div>
+            <button
+              type="button"
+              onclick="sumar();"
+              name="btnAccion"
+              value="sumar"
+              class="btn btn-success btn-sm"
+            >
+              Sumar
+            </button>
+            <button
+              type="button"
+              onclick="restar();"
+              name="btnAccion"
+              value="restar"
+              class="btn btn-success btn-sm"
+            >
+              Restar
+            </button>
+            <button
+              type="button"
+              onclick="multiplicar();"
+              name="btnAccion"
+              value="multiplicar"
+              class="btn btn-success btn-sm"
+            >
+              Multiplicar
+            </button>
+            <button
+              type="button"
+              onclick="dividir();"
+              name="btnAccion"
+              value="dividir"
+              class="btn btn-success btn-sm"
+            >
+              Dividir
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
